@@ -24,6 +24,7 @@ import {
   Fence,
   MessagesSquare,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 /* ------------------------------------------------------------------ */
 /* Types & demo data                                                   */
@@ -282,6 +283,8 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const router = useRouter();
+
   return (
     <header
       className={`fixed inset-x-0 px-20 top-0 z-50 border-b transition-colors duration-300 ${
@@ -308,7 +311,7 @@ function Navbar() {
           ))}
         </ul>
         <div className="hidden items-center gap-3 md:flex">
-          <Button href="#waitlist" className="h-10 px-5">
+          <Button href="/auth" className="h-10 px-5">
             Get started
           </Button>
         </div>
